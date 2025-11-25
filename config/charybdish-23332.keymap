@@ -19,6 +19,15 @@
 //                  26     27     29        30     31
 //               ╰──────┴──────┴──────╯  ╰──────┴──────╯
 
+#define LAYER_BASE          0
+#define LAYER_ODK           1
+#define LAYER_ODK_SHIFT     2
+#define LAYER_EXTRA_SYMBOLS 3
+#define LAYER_NUMNAV        4
+#define LAYER_NUM_ROW       5
+#define LAYER_FUNC          6
+
+
 / {
     behaviors {
         HMR_R: HMR_R {
@@ -89,6 +98,30 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&osm>;
+        };
+
+        // I mean, it wants everything at the same time
+        bls: bisexual_layer_switch {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&osl>;
+        };
+
+        thumb_lh: left_thumb_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ltsk LAYER_VIM_NAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_RALT)>;
+        };
+
+        thumb_lt: left_thumb_tucked {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&hrm LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
+            mods = <(MOD_RALT)>;
         };
 
         dead_key: dead_key {
@@ -167,7 +200,37 @@
             &kp_q           &kp W           &kp E           &kp R           &kp T           &dot            &kp U           &kp I           &dead_key           &kp P
             &kp A           &hrm MS S       &hrm MC D       &hrm MA F       &kp G           &kp H           &hrm MA J       &hrm MC K       &hrm MS L           &kp SEMI
                             &kp X           &kp C           &kp V                                           &kp M           &kp COMMA       &kp DOT
-                            &none           &kp LEFT_SHIFT  &lt 1 TAB       &lt 2 SPACE     &mt RIGHT_ALT BACKSPACE
+                            &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB       &lt LAYER_NUMNAV SPACE     &mt RIGHT_ALT BACKSPACE
+            >;
+        };
+
+        super_odk {
+            display-name = "SuperOneDeadKey";
+            bindings = <
+         &odk Q  &odk W  &odk E  &odk R  &kp Z     &odk N  &kp Y      &odk I      &odk O    &odk P
+         &odk A  &odk S  &odk D  &odk F  &kp B     &odk H  &odk J     &odk K      &odk L    &odk SEMI
+                 &odk Z  &odk C  &odk V                    &kp FSLH   &odk COMMA  &odk DOT
+                       &kp LALT  &osl LAYER_ODK_SHIFT       &odk SPACE  &kp RALT
+            >;
+        };
+
+        super_odk_shift {
+            display-name = "SuperOneDeadKeyShifted";
+            bindings = <
+         &sodk Q &sodk W &sodk E &sodk R &kp LS(Z) &sodk N &kp LS(Y)    &sodk I     &sodk O   &sodk P
+         &sodk A &sodk S &sodk D &sodk F &kp LS(B) &sodk H &sodk J      &sodk K     &sodk L   &sodk SEMI
+                 &sodk Z &sodk C &odk B                    &kp LS(FSLH) &sodk COMMA &sodk DOT
+                       &none     &none                     &odk SPACE &kp RALT
+            >;
+        };
+
+        extra_symbols {
+            display-name = "ExtraSymbols";
+            bindings = <
+         &none     &none &none &none     &none    &none &none     &none &none &none
+         &kp RA(Z) &none &none &kp RA(B) &none    &none &kp RA(N) &none &none &kp RA(FSLH)
+                   &none &none &none                    &none     &none &none
+                         &none &none                    &none &none
             >;
         };
 
@@ -176,7 +239,7 @@
             &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &kp DELETE                       &kp KP_NUMBER_7     &kp KP_NUMBER_8     &kp KP_NUMBER_9             &kp KP_PLUS
             &kp HOME    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT                           &kp END             &kp KP_DIVIDE       &HMR_R RSHFT KP_NUMBER_4    &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
             &kp LC(X)       &kp LC(W)       &kp LC(V)      &kp LC(A)                        &kp KP_NUMBER_1     &kp KP_NUMBER_2             &kp KP_NUMBER_3          &kp KP_DOT
-                            &none           &kp LSHFT      &kp TAB                          &lt 3 SPACE         &kp BACKSPACE
+                            &none           &kp LSHFT      &kp TAB                          &lt LAYER_FUNC SPACE         &kp BACKSPACE
             >;
 
             label = "num_nav";
@@ -187,7 +250,7 @@
             &kp LS(N1)                  &kp LS(N2)                  &kp LS(N3)              &none                   &none           &none       &none               &none
             &HRM_L LEFT_GUI NUMBER_1    &HRM_L LEFT_ALT NUMBER_2    &HRM_L LCTRL NUMBER_3   &HRM_L LSHIFT NUMBER_4  &kp N5          &kp N6      &HMR_R RSHFT N7     &HMR_R RCTRL N8     &HMR_R LEFT_ALT N9      &HMR_R RMETA N0
             &none                       &none                       &none                   &none                   &none           &none       &none
-                                        &none                       &kp LSHFT               &lt 3 TAB                 &kp SPACE       &kp BACKSPACE
+                                        &none                       &kp LSHFT               &lt LAYER_FUNC TAB                 &kp SPACE       &kp BACKSPACE
             >;
 
             label = "num";
