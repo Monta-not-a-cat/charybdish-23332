@@ -291,7 +291,7 @@
 &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7       &kp KP_N8                 &kp KP_NUMBER_9
 &kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS           &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
 &kp LC(X)    &kp LC(W)       &kp LC(V)       &kp LC(A)   &kp KP_NUMBER_1  &kp KP_NUMBER_2       &kp KP_NUMBER_3           &kp KP_DOT
-                             &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &kp BACKSPACE
+                             &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
@@ -299,10 +299,10 @@
 
         num {
             bindings = <
-&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none               &none      &none            &none
-&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5              &kp N6     &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
-&none                     &none                     &none                  &none                   &none               &none      &none            &none
-                                                    &none                  &kp LSHFT               &lt LAYER_FUNC TAB  &kp SPACE  &kp BACKSPACE
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none               &none      &none                    &none
+&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5              &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
+&none                     &none                     &none                  &none                   &none               &none      &none                    &none
+                                                    &none                  &kp LSHFT               &lt LAYER_FUNC TAB  &kp SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
@@ -310,10 +310,10 @@
 
         func {
             bindings = <
-&kp F1   &kp F2  &kp F3  &kp F12    &none    &none      &none          &none
-&kp F10  &kp F4  &kp F5  &kp F6     &none    &none      &kp RSHIFT     &kp RCTRL  &kp LEFT_ALT  &kp RGUI
-&kp F11  &kp F7  &kp F8  &kp F9     &none    &none      &none          &none
-                 &none   &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
+&kp F1   &kp F2  &kp F3  &kp F12    &none    &none      &none               &none
+&kp F10  &kp F4  &kp F5  &kp F6     &none    &none      &kp RSHIFT          &kp RCTRL  &kp LEFT_ALT  &kp RGUI
+&kp F11  &kp F7  &kp F8  &kp F9     &none    &none      &none               &none
+                 &none   &kp LSHFT  &kp TAB  &kp SPACE  &mt RALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
@@ -321,10 +321,10 @@
 
         params {
             bindings = <
-&none  &none  &none  &none   &bt BT_SEL 0  &none  &none  &none
-&none  &none  &none  &trans  &trans        &none  &none  &none  &none  &none
-&none  &none  &none  &none   &none         &none  &none  &none
-              &none  &none   &none         &none  &none
+&none  &none  &none  &none  &bt BT_SEL 0  &none  &none  &none
+&none  &none  &none  &none  &none         &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none         &none  &none  &none
+              &none  &none  &none         &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
