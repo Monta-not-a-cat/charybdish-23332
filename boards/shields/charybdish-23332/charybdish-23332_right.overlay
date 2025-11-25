@@ -1,4 +1,6 @@
 #include "charybdish-23332.dtsi"
+#include "charybdis_pmw3610.dtsi"
+#include "charybdis_pointer.dtsi"
 
 &default_transform {
     col-offset = <5>;
@@ -21,3 +23,9 @@
         ;
 
     };
+
+/* enable the listener on central */
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+};
