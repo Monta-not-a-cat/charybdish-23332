@@ -299,7 +299,7 @@
 
         num {
             bindings = <
-&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none               &none      &none                    &none
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N9)              &kp LS(N0)          &kp RA(Z)  &none                    &none
 &HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5              &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
 &none                     &none                     &none                  &none                   &none               &none      &none                    &none
                                                     &none                  &kp LSHFT               &lt LAYER_FUNC TAB  &kp SPACE  &mt RIGHT_ALT BACKSPACE
