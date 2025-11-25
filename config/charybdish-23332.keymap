@@ -112,7 +112,7 @@
         thumb_lh: left_thumb_home {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ltsk LAYER_VIM_NAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
+            bindings = <&ltsk LAYER_NUMNAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
             mods = <(MOD_RALT)>;
             keep-mods = <(MOD_RALT)>;
         };
