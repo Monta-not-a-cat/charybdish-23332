@@ -120,7 +120,7 @@
         thumb_lt: left_thumb_tucked {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&hrm LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
+            bindings = <&HRM_L LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
             mods = <(MOD_RALT)>;
         };
 
@@ -198,7 +198,7 @@
         default_layer {
             bindings = <
             &kp_q           &kp W           &kp E           &kp R           &kp T           &dot            &kp U           &kp I           &dead_key           &kp P
-            &kp A           &hrm MS S       &hrm MC D       &hrm MA F       &kp G           &kp H           &hrm MA J       &hrm MC K       &hrm MS L           &kp SEMI
+            &kp A           &HRM_L MS S       &HRM_L MC D       &HRM_L MA F       &kp G           &kp H           &HRM_ MA J       &hrm MC K       &hrm MS L           &kp SEMI
                             &kp X           &kp C           &kp V                                           &kp M           &kp COMMA       &kp DOT
                             &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB       &lt LAYER_NUMNAV SPACE     &mt RIGHT_ALT BACKSPACE
             >;
