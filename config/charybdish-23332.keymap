@@ -77,24 +77,6 @@
             tap-ms = <20>;
         };
 
-        kp_q: kp_q {
-            compatible = "zmk,behavior-mod-morph";
-            label = "key_press_q";
-            bindings = <&kp Q>, <&kp RA(Y)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
-        };
-
-        dot: dot {
-            compatible = "zmk,behavior-mod-morph";
-            label = "key_press_dot";
-            bindings = <&kp N>, <&kp RA(Q)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
-        };
-
         osm: one_shot_modifier {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -117,14 +99,6 @@
                 <&sl MACRO_PLACEHOLDER>;
         };
 
-        ltsk: layer_tap_sticky_key {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&osm>;
-        };
-
         // I mean, it wants everything at the same time
 
         bls: bisexual_layer_switch {
@@ -133,23 +107,6 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&osl>;
-        };
-
-        thumb_lh: left_thumb_home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ltsk LAYER_NUMNAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
-
-            mods = <(MOD_RALT)>;
-            keep-mods = <(MOD_RALT)>;
-        };
-
-        thumb_lt: left_thumb_tucked {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&HRM_L LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
-
-            mods = <(MOD_RALT)>;
         };
 
         dead_key: dead_key {
