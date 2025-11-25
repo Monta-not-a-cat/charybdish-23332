@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 72
+
 #define MS LSHFT
 #define MA LALT
 #define MC LCTL
@@ -55,6 +57,24 @@
             hold-trigger-key-positions = <4 5 6 7 13 14 15 16 17 22 23 24 25 29 30 28 27 26>;
             flavor = "balanced";
             require-prior-idle-ms = <230>;
+        };
+
+        mouse_scrll_v: mouse_scrll_v {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_SCRLL_V";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <20>;
+        };
+
+        mouse_scroll_h: mouse_scroll_h {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_SCROLL_H";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
         };
 
         kp_q: kp_q {
@@ -214,6 +234,8 @@
 &kp Q              &kp X              &kp C           &kp V           &kp M                  &kp COMMA               &kp DOT                  &kp P
                                       &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
             >;
+
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         super_odk {
@@ -222,18 +244,22 @@
 &odk W  &odk E  &odk R  &kp Z                 &odk N     &kp Y       &odk I    &odk O
 &odk A  &odk S  &odk D  &odk F                &kp B      &odk H      &odk J    &odk K  &odk L  &odk SEMI
 &odk Q  &odk X  &odk C  &odk V                &kp SLASH  &odk COMMA  &odk DOT  &odk P
-                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE
+                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE  &none
             >;
+
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         super_odk_shift {
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
-&sodk Q  &sodk W     &sodk E  &sodk R  &kp LS(Z)   &sodk N       &kp LS(Y)    &sodk I
-&sodk O  &sodk P     &sodk A  &sodk S  &sodk D     &sodk F       &kp LS(B)    &sodk H    &sodk J  &sodk K
-&sodk L  &sodk SEMI  &sodk Z  &sodk C  &odk B      &kp LS(FSLH)  &sodk COMMA  &sodk DOT
-                     &none    &none    &odk SPACE  &kp RALT
+&sodk W  &sodk E  &sodk R  &kp Z                 &sodk N     &kp Y       &sodk I    &sodk O
+&sodk A  &sodk S  &sodk D  &sodk F                &kp B      &sodk H      &sodk J    &sodk K  &sodk L  &sodk SEMI
+&sodk Q  &sodk X  &sodk C  &sodk V                &kp SLASH  &sodk COMMA  &sodk DOT  &sodk P
+                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &sodk SPACE  &none
             >;
+
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         extra_symbols {
@@ -242,8 +268,10 @@
 &none  &none         &none      &none  &none  &none      &none  &none
 &none  &none         &kp RA(Z)  &none  &none  &kp RA(B)  &none  &none  &kp RA(N)  &none
 &none  &kp RA(FSLH)  &none      &none  &none  &none      &none  &none
-                     &none      &none  &none  &none
+            &none         &none      &none  &none  &none
             >;
+
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         num_nav {
@@ -254,7 +282,8 @@
                              &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &kp BACKSPACE
             >;
 
-            label = "num_nav";
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+
         };
 
         num {
@@ -262,10 +291,10 @@
 &kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none      &none          &none            &none
 &HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5     &kp N6         &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
 &none                     &none                     &none                  &none                   &none      &none          &none            &none
-                                                    &kp LSHFT              &lt LAYER_FUNC TAB      &kp SPACE  &kp BACKSPACE
+                        &none                         &kp LSHFT              &lt LAYER_FUNC TAB      &kp SPACE  &kp BACKSPACE
             >;
 
-            label = "num";
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         func {
@@ -273,10 +302,10 @@
 &kp F1   &kp F2  &kp F3     &kp F12  &none      &none          &none       &none
 &kp F10  &kp F4  &kp F5     &kp F6   &none      &none          &kp RSHIFT  &kp RCTRL  &kp LEFT_ALT  &kp RGUI
 &kp F11  &kp F7  &kp F8     &kp F9   &none      &none          &none       &none
-                 &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
+         &none        &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
             >;
 
-            label = "func";
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         params {
@@ -287,7 +316,7 @@
               &none  &none   &none         &none  &none
             >;
 
-            label = "params";
+            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
