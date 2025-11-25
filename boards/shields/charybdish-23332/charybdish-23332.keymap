@@ -1,0 +1,102 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    behaviors {
+        HMR_R: HMR_R {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_R";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <230>;
+        };
+
+        HRM_L: HRM_L {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <16 17 18 19 26 27 28 29 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33 31 30>;
+            flavor = "balanced";
+            require-prior-idle-ms = <230>;
+        };
+    };
+
+    macros {
+        test: test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N9 &kp N4 &kp N8 &kp N0 &kp N0 &kp N8 &kp N5 &kp N1 &kp N3>;
+            label = "TEST";
+            wait-ms = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp Q              &kp W              &kp E           &kp R            &kp T        &kp Y        &kp U                    &kp I           &kp O          &kp P
+&HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHIFT F  &kp G        &kp H        &HMR_R RSHFT J           &HMR_R RCTRL K  &HMR_R LALT L  &HMR_R RMETA SEMICOLON
+&kp Z              &kp X              &kp C           &kp V            &kp B        &kp N        &kp M                    &kp COMMA       &kp DOT        &kp FSLH
+                                      &none           &sk LEFT_SHIFT   &lt 1 TAB    &lt 2 SPACE  &mt RIGHT_ALT BACKSPACE  &none
+            >;
+        };
+
+        num_nav {
+            bindings = <
+&kp ESCAPE  &kp PG_DN  &kp UP_ARROW    &kp END    &kp DELETE    &kp KP_MINUS     &kp KP_NUMBER_7           &kp KP_NUMBER_8           &kp KP_NUMBER_9          &kp KP_PLUS
+&kp HOME    &kp DOWN   &kp DOWN_ARROW  &kp RIGHT  &kp END       &kp KP_DIVIDE    &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&none       &none      &none           &none      &none         &kp KP_MULTIPLY  &kp KP_NUMBER_1           &kp KP_NUMBER_2           &kp KP_NUMBER_3          &kp KP_DOT
+                       &none           &sk LSHFT  &none         &lt 3 SPACE      &kp BACKSPACE             &none
+            >;
+
+            label = "num_nav";
+        };
+
+        num {
+            bindings = <
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N4)              &kp LS(N5)    &kp LS(N6)  &kp LS(N7)          &kp LS(N8)       &kp LS(N9)          &kp LS(N0)
+&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5        &kp N6      &HMR_R RSHFT N7     &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
+&none                     &none                     &none                  &none                   &none         &kp N       &none               &none            &kp PERIOD          &kp KP_DIVIDE
+                                                    &none                  &sk LEFT_SHIFT          &lt 3 TAB     &kp SPACE   &mt RALT BACKSPACE  &none
+            >;
+
+            label = "num";
+        };
+
+        func {
+            bindings = <
+&kp F1  &kp F2   &kp F3   &kp F4      &none    &none  &kp F13        &kp F14    &kp F15   &kp F16
+&kp F5  &kp F6   &kp F7   &kp F8      &none    &none  &kp RSHFT      &kp RCTRL  &kp LALT  &kp RGUI
+&kp F9  &kp F10  &kp F11  &kp F12     &none    &sl 4  &none          &none      &test     &kp LC(LA(DELETE))
+                 &none    &sk LSHIFT  &none    &none  &kp BACKSPACE  &none
+            >;
+
+            label = "func";
+        };
+
+        params {
+            bindings = <
+&sys_reset   &trans  &trans  &trans          &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
+&bootloader  &trans  &trans  &bt BT_CLR_ALL  &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
+&trans       &trans  &trans  &bt BT_CLR      &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
+                     &none   &trans          &trans          &trans  &trans  &none
+            >;
+
+            label = "params";
+        };
+    };
+ };

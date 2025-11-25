@@ -1,0 +1,17 @@
+if SHIELD_CHARYBDISH-23332_RIGHT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Charybdish-23332"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_SKELETYLHW_LEFT || SHIELD_SKELETYLHW_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
