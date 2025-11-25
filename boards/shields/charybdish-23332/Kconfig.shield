@@ -1,5 +1,5 @@
-config SHIELD_CHARYBDISH-23332_LEFT
+config SHIELD_CHARYBDISH_23332_LEFT
     def_bool $(shields_list_contains,charybdish-23332_left)
 
-config SHIELD_CHARYBDISH-23332_RIGHT
+config SHIELD_CHARYBDISH_23332_RIGHT
     def_bool $(shields_list_contains,charybdish-23332_right)
