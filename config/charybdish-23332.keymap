@@ -1,11 +1,8 @@
+#include <dt-bindings/zmk/mouse.h>
+#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/ext_power.h>
 
 /* --- KEYMAP CONFIG --- */
 // ╭──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────╮
@@ -29,7 +26,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30>;
+            hold-trigger-key-positions = <0 1 2 3 8 9 10 11 12 18 19 20 21 26 27 28 29 30>;
             hold-trigger-on-release;
             require-prior-idle-ms = <230>;
         };
@@ -43,7 +40,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <16 17 18 19 26 27 28 29 33 5 6 7 8 9 15 16 17 18 19 25 26>;
+            hold-trigger-key-positions = <4 5 6 7 13 14 15 16 17 22 23 24 25 29 30 28 27 26>;
             flavor = "balanced";
             require-prior-idle-ms = <230>;
         };
@@ -54,12 +51,12 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <18 17 16>;
+            key-positions = <16 15 14>;
         };
 
         printscreen {
             bindings = <&kp PRINTSCREEN>;
-            key-positions = <21 22 23>;
+            key-positions = <21 19 20>;
         };
 
         esc {
@@ -67,31 +64,9 @@
             key-positions = <0 1>;
         };
 
-        numpad_left {
-            bindings = <&to 5>;
-            key-positions = <20 4>;
-        };
-
-        back_to_base {
-            bindings = <&to 0>;
-            key-positions = <4 20>;
-        };
-
-        reset_left {
-            bindings = <&bootloader>;
-            key-positions = <20 24>;
-            layers = <0>;
-        };
-
-        reset_right {
-            bindings = <&bootloader>;
-            key-positions = <25 29>;
-            layers = <0>;
-        };
-
         capslock {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <10 11 12>;
+            key-positions = <10 8 9>;
         };
     };
 
@@ -100,19 +75,19 @@
 
         default_layer {
             bindings = <
-&kp Q              &kp W              &kp E           &kp R            &kp T        &kp Y        &kp U                    &kp I           &kp O          &kp P
-&HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHIFT F  &kp G        &kp H        &HMR_R RSHFT J           &HMR_R RCTRL K  &HMR_R LALT L  &HMR_R RMETA SEMICOLON
-&kp Z              &kp X              &kp C           &kp V            &kp B        &kp N        &kp M                    &kp COMMA       &kp DOT        &kp FSLH
-                                      &none           &kp LEFT_SHIFT   &lt 1 TAB    &lt 2 SPACE  &mt RIGHT_ALT BACKSPACE  &none
+&kp Q          &kp W                   &kp E              &kp R              &kp T           &kp Y            &kp U  &kp I
+&kp O          &kp P                   &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHIFT F  &kp G  &kp H  &HMR_R RSHFT J  &HMR_R RCTRL K
+&HMR_R LALT L  &HMR_R RMETA SEMICOLON  &kp Z              &kp X              &kp C           &kp V            &kp B  &kp N
+                                       &kp M              &kp COMMA          &kp DOT         &kp FSLH         &none
             >;
         };
 
         num_nav {
             bindings = <
-&kp ESCAPE  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &kp DELETE    &kp KP_MINUS     &kp KP_NUMBER_7           &kp KP_NUMBER_8           &kp KP_NUMBER_9          &kp KP_PLUS
-&kp HOME    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp END       &kp KP_DIVIDE    &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-&kp LC(Z)   &kp LC(X)       &kp LC(W)       &kp LC(V)      &kp LC(A)     &kp KP_MULTIPLY  &kp KP_NUMBER_1           &kp KP_NUMBER_2           &kp KP_NUMBER_3          &kp KP_DOT
-                            &none           &kp LSHFT      &none         &lt 3 SPACE      &kp BACKSPACE             &none
+&kp ESCAPE               &kp PAGE_UP         &kp UP_ARROW     &kp PAGE_DOWN    &kp DELETE       &kp KP_MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8
+&kp KP_NUMBER_9          &kp KP_PLUS         &kp HOME         &kp LEFT_ARROW   &kp DOWN_ARROW   &kp RIGHT     &kp END          &kp KP_DIVIDE    &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5
+&HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0  &kp LC(Z)        &kp LC(X)        &kp LC(W)        &kp LC(V)     &kp LC(A)        &kp KP_MULTIPLY
+                                             &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DOT    &none
             >;
 
             label = "num_nav";
@@ -120,10 +95,10 @@
 
         num {
             bindings = <
-&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N4)              &kp LS(N5)    &kp LS(N6)  &kp LS(N7)       &kp LS(N8)       &kp LS(N9)          &kp LS(N0)
-&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5        &kp N6      &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
-&none                     &none                     &none                  &none                   &none         &kp N       &none            &none            &kp PERIOD          &kp KP_DIVIDE
-                                                    &none                  &kp LEFT_SHIFT          &lt 3 TAB     &kp SPACE   &kp BACKSPACE    &none
+&kp LS(N1)          &kp LS(N2)       &kp LS(N3)                &kp LS(N4)                &kp LS(N5)             &kp LS(N6)              &kp LS(N7)  &kp LS(N8)
+&kp LS(N9)          &kp LS(N0)       &HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5      &kp N6      &HMR_R RSHFT N7  &HMR_R RCTRL N8
+&HMR_R LEFT_ALT N9  &HMR_R RMETA N0  &none                     &none                     &none                  &none                   &none       &kp N
+                                     &none                     &none                     &kp PERIOD             &kp KP_DIVIDE           &none
             >;
 
             label = "num";
@@ -131,10 +106,10 @@
 
         func {
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4      &none    &none  &kp F13        &kp F14    &kp F15   &kp F16
-&kp F5  &kp F6   &kp F7   &kp F8      &none    &none  &kp RSHFT      &kp RCTRL  &kp LALT  &kp RGUI
-&kp F9  &kp F10  &kp F11  &kp F12     &none    &sl 4  &none          &none      &none     &kp LC(LA(DELETE))
-                 &none    &kp LSHIFT  &none    &none  &kp BACKSPACE  &none
+&kp F1    &kp F2    &kp F3  &kp F4   &none    &none               &kp F13  &kp F14
+&kp F15   &kp F16   &kp F5  &kp F6   &kp F7   &kp F8              &none    &none    &kp RSHFT  &kp RCTRL
+&kp LALT  &kp RGUI  &kp F9  &kp F10  &kp F11  &kp F12             &none    &sl 4
+                    &none   &none    &none    &kp LC(LA(DELETE))  &none
             >;
 
             label = "func";
@@ -142,10 +117,10 @@
 
         params {
             bindings = <
-&sys_reset   &trans  &trans  &trans          &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
-&bootloader  &trans  &trans  &bt BT_CLR_ALL  &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
-&trans       &trans  &trans  &bt BT_CLR      &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
-                     &none   &trans          &trans          &trans  &trans  &none
+&sys_reset  &trans       &trans       &trans  &bt BT_SEL 0  &trans          &trans        &trans
+&trans      &sys_reset   &bootloader  &trans  &trans        &bt BT_CLR_ALL  &bt BT_SEL 1  &trans  &trans  &trans
+&trans      &bootloader  &trans       &trans  &trans        &bt BT_CLR      &bt BT_SEL 2  &trans
+                         &trans       &trans  &trans        &trans          &none
             >;
 
             label = "params";
@@ -153,10 +128,10 @@
 
         numpad_left {
             bindings = <
-&kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT    &trans  &trans  &trans  &trans  &trans
-&kp KP_NUMBER_0  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH       &trans  &trans  &trans  &trans  &trans
-&kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MULTIPLY    &trans  &trans  &trans  &trans  &trans
-                                  &trans           &kp BACKSPACE    &lt 1 SPACE        &trans  &trans  &trans
+&kp KP_PLUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans           &trans           &trans
+&trans       &trans           &kp KP_NUMBER_0  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH     &trans  &trans  &trans
+&trans       &trans           &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MULTIPLY  &trans
+                              &trans           &trans           &trans           &trans           &trans
             >;
         };
     };
