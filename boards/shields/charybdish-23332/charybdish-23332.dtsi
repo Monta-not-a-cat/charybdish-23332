@@ -17,7 +17,7 @@
 	compatible = "zmk,battery-nrf-vddh";
     };
 
-    default_transform: keymap_transform0 {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
@@ -30,9 +30,14 @@
     };
 
     kscan0: kscan0 {
-        compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
     };
+
+    /*kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+    };*/
 
 };
