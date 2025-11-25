@@ -91,30 +91,6 @@
             bindings = <&mo>, <&osm>;
         };
 
-        // I mean, it wants everything at the same time
-        bls: bisexual_layer_switch {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&osl>;
-        };
-
-        thumb_lh: left_thumb_home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ltsk LAYER_VIM_NAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
-            mods = <MOD_RALT>;
-            keep-mods = <MOD_RALT>;
-        };
-
-        thumb_lt: left_thumb_tucked {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&hrm LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
-            mods = <MOD_RALT>;
-        };
-
         dead_key: dead_key {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -127,7 +103,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp O>, <&kp O>;
-            mods = <MOD_LSFT>;
+            mods = <(MOD_LSFT)}>;
         };
     };
 
