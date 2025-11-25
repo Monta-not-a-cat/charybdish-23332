@@ -244,7 +244,7 @@
 &kp W              &kp E              &kp R           &kp T           &kp N                  &kp U                   &kp I                    &dead_key
 &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G                  &kp H                   &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
 &kp Q              &kp X              &kp C           &kp V           &kp M                  &kp COMMA               &kp DOT                  &kp P
-                                      &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
+                                      &kp K_MUTE      &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
