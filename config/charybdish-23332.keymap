@@ -219,10 +219,10 @@
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-&odk W  &odk E  &odk R    &kp Z                 &odk Z      &odk N    &kp Y       &odk I
-&odk O  &odk P  &odk A    &odk S                &kp B       &odk F    &kp B       &odk H    &odk J  &odk K
-&odk Q  &odk X  &odk C    &odk V                &odk V      &kp FSLH  &odk COMMA  &odk DOT
-                &kp LALT  &osl LAYER_ODK_SHIFT  &odk SPACE  &kp RALT
+&odk W  &odk E  &odk R  &kp Z                 &odk N     &kp Y       &odk I    &odk O
+&odk A  &odk S  &odk D  &odk F                &kp B      &odk H      &odk J    &odk K  &odk L  &odk SEMI
+&odk Q  &odk X  &odk C  &odk V                &kp SLASH  &odk COMMA  &odk DOT  &odk P
+                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE
             >;
         };
 
