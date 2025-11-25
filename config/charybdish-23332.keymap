@@ -136,7 +136,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp O>, <&kp O>;
-            mods = <(MOD_LSFT)}>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
