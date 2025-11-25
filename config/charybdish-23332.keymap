@@ -198,7 +198,7 @@
         default_layer {
             bindings = <
             &kp_q           &kp W           &kp E           &kp R           &kp T           &dot            &kp U           &kp I           &dead_key           &kp P
-            &kp A           &HRM_L MS S       &HRM_L MC D       &HRM_L MA F       &kp G           &kp H           &HRM_ MA J       &hrm MC K       &hrm MS L           &kp SEMI
+            &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHIFT F  &kp G        &kp H        &HMR_R RSHFT J           &HMR_R RCTRL K  &HMR_R LALT L  &HMR_R RMETA SEMICOLON
                             &kp X           &kp C           &kp V                                           &kp M           &kp COMMA       &kp DOT
                             &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB       &lt LAYER_NUMNAV SPACE     &mt RIGHT_ALT BACKSPACE
             >;
