@@ -27,7 +27,6 @@
 #define LAYER_NUM_ROW       5
 #define LAYER_FUNC          6
 
-
 / {
     behaviors {
         HMR_R: HMR_R {
@@ -81,7 +80,10 @@
             #binding-cells = <1>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_tap>,
+                <&sk MACRO_PLACEHOLDER>;
         };
 
         osl: one_shot_layer {
@@ -89,7 +91,10 @@
             #binding-cells = <1>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings = <&macro_param_1to1>, <&macro_tap &sl MACRO_PLACEHOLDER>;
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_tap>,
+                <&sl MACRO_PLACEHOLDER>;
         };
 
         ltsk: layer_tap_sticky_key {
@@ -101,6 +106,7 @@
         };
 
         // I mean, it wants everything at the same time
+
         bls: bisexual_layer_switch {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -113,6 +119,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ltsk LAYER_NUMNAV LSHFT>, <&lt LAYER_NUM_ROW SPACE>;
+
             mods = <(MOD_RALT)>;
             keep-mods = <(MOD_RALT)>;
         };
@@ -121,6 +128,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&HRM_L LGUI ESCAPE>, <&bls LAYER_NUM_ROW LAYER_NUM_ROW>;
+
             mods = <(MOD_RALT)>;
         };
 
@@ -128,6 +136,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&bls LAYER_ODK LAYER_ODK>, <&kp O>;
+
             mods = <(MOD_LSFT|MOD_RSFT|MOD_RALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT|MOD_RALT|MOD_LGUI|MOD_LCTL)>;
         };
@@ -136,6 +145,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp O>, <&kp O>;
+
             mods = <(MOD_LSFT)>;
         };
     };
@@ -146,11 +156,11 @@
             #binding-cells = <1>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings
-                = <&macro_tap &nsodk>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                ;
+            bindings =
+                <&macro_tap>,
+                <&nsodk &macro_param_1to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER>;
         };
 
         sodk: shifted_one_dead_key {
@@ -158,13 +168,15 @@
             #binding-cells = <1>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings
-                = <&macro_tap &nsodk>
-                , <&macro_press &kp LSHFT>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_tap>,
+                <&nsodk>,
+                <&macro_press>,
+                <&kp LSHFT &macro_param_1to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LSHFT>;
         };
     };
 
@@ -197,49 +209,49 @@
 
         default_layer {
             bindings = <
-            &kp_q           &kp W           &kp E           &kp R           &kp T           &dot            &kp U           &kp I           &dead_key           &kp P
-            &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHIFT F  &kp G        &kp H        &HMR_R RSHFT J           &HMR_R RCTRL K  &HMR_R LALT L  &HMR_R RMETA SEMICOLON
-                            &kp X           &kp C           &kp V                                           &kp M           &kp COMMA       &kp DOT
-                            &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB       &lt LAYER_NUMNAV SPACE     &mt RIGHT_ALT BACKSPACE
+&kp W              &kp E              &kp R           &kp T           &kp N                  &kp U                   &kp I                    &dead_key
+&HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G                  &kp H                   &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
+&kp Q              &kp X              &kp C           &kp V           &kp M                  &kp COMMA               &kp DOT                  &kp P
+                                      &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
             >;
         };
 
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-         &odk Q  &odk W  &odk E  &odk R  &kp Z     &odk N  &kp Y      &odk I      &odk O    &odk P
-         &odk A  &odk S  &odk D  &odk F  &kp B     &odk H  &odk J     &odk K      &odk L    &odk SEMI
-                 &odk Z  &odk C  &odk V                    &kp FSLH   &odk COMMA  &odk DOT
-                       &kp LALT  &osl LAYER_ODK_SHIFT       &odk SPACE  &kp RALT
+&odk W  &odk E  &odk R  &kp Z                 &odk N     &kp Y       &odk I    &odk O
+&odk A  &odk S  &odk D  &odk F                &kp B      &odk H      &odk J    &odk K  &odk L  &odk SEMI
+&odk Q  &odk X  &odk C  &odk V                &kp SLASH  &odk COMMA  &odk DOT  &odk P
+                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE
             >;
         };
 
         super_odk_shift {
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
-         &sodk Q &sodk W &sodk E &sodk R &kp LS(Z) &sodk N &kp LS(Y)    &sodk I     &sodk O   &sodk P
-         &sodk A &sodk S &sodk D &sodk F &kp LS(B) &sodk H &sodk J      &sodk K     &sodk L   &sodk SEMI
-                 &sodk Z &sodk C &odk B                    &kp LS(FSLH) &sodk COMMA &sodk DOT
-                       &none     &none                     &odk SPACE &kp RALT
+&sodk Q  &sodk W     &sodk E  &sodk R  &kp LS(Z)   &sodk N       &kp LS(Y)    &sodk I
+&sodk O  &sodk P     &sodk A  &sodk S  &sodk D     &sodk F       &kp LS(B)    &sodk H    &sodk J  &sodk K
+&sodk L  &sodk SEMI  &sodk Z  &sodk C  &odk B      &kp LS(FSLH)  &sodk COMMA  &sodk DOT
+                     &none    &none    &odk SPACE  &kp RALT
             >;
         };
 
         extra_symbols {
             display-name = "ExtraSymbols";
             bindings = <
-         &none     &none &none &none     &none    &none &none     &none &none &none
-         &kp RA(Z) &none &none &kp RA(B) &none    &none &kp RA(N) &none &none &kp RA(FSLH)
-                   &none &none &none                    &none     &none &none
-                         &none &none                    &none &none
+&none  &none         &none      &none  &none  &none      &none  &none
+&none  &none         &kp RA(Z)  &none  &none  &kp RA(B)  &none  &none  &kp RA(N)  &none
+&none  &kp RA(FSLH)  &none      &none  &none  &none      &none  &none
+                     &none      &none  &none  &none
             >;
         };
 
         num_nav {
             bindings = <
-            &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &kp DELETE                       &kp KP_NUMBER_7     &kp KP_NUMBER_8     &kp KP_NUMBER_9             &kp KP_PLUS
-            &kp HOME    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT                           &kp END             &kp KP_DIVIDE       &HMR_R RSHFT KP_NUMBER_4    &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-            &kp LC(X)       &kp LC(W)       &kp LC(V)      &kp LC(A)                        &kp KP_NUMBER_1     &kp KP_NUMBER_2             &kp KP_NUMBER_3          &kp KP_DOT
-                            &none           &kp LSHFT      &kp TAB                          &lt LAYER_FUNC SPACE         &kp BACKSPACE
+&kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_NUMBER_7  &kp KP_NUMBER_8       &kp KP_NUMBER_9           &kp KP_PLUS
+&kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_DIVIDE         &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&kp LC(X)    &kp LC(W)       &kp LC(V)       &kp LC(A)   &kp KP_NUMBER_1  &kp KP_NUMBER_2       &kp KP_NUMBER_3           &kp KP_DOT
+                             &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &kp BACKSPACE
             >;
 
             label = "num_nav";
@@ -247,10 +259,10 @@
 
         num {
             bindings = <
-            &kp LS(N1)                  &kp LS(N2)                  &kp LS(N3)              &none                   &none           &none       &none               &none
-            &HRM_L LEFT_GUI NUMBER_1    &HRM_L LEFT_ALT NUMBER_2    &HRM_L LCTRL NUMBER_3   &HRM_L LSHIFT NUMBER_4  &kp N5          &kp N6      &HMR_R RSHFT N7     &HMR_R RCTRL N8     &HMR_R LEFT_ALT N9      &HMR_R RMETA N0
-            &none                       &none                       &none                   &none                   &none           &none       &none
-                                        &none                       &kp LSHFT               &lt LAYER_FUNC TAB                 &kp SPACE       &kp BACKSPACE
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none      &none          &none            &none
+&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5     &kp N6         &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
+&none                     &none                     &none                  &none                   &none      &none          &none            &none
+                                                    &kp LSHFT              &lt LAYER_FUNC TAB      &kp SPACE  &kp BACKSPACE
             >;
 
             label = "num";
@@ -258,10 +270,10 @@
 
         func {
             bindings = <
-            &kp F1      &kp F2  &kp F3      &kp F12               &none         &none       &none       &none
-            &kp F10     &kp F4  &kp F5      &kp F6   &none        &kp RSHFT     &kp RCTRL   &kp LALT    &kp RGUI
-            &kp F11     &kp F7  &kp F8      &kp F9                &none         &none       &none       &none    
-                        &none   &kp LSHFT   &kp TAB               &kp SPACE     &kp BACKSPACE
+&kp F1   &kp F2  &kp F3     &kp F12  &none      &none          &none       &none
+&kp F10  &kp F4  &kp F5     &kp F6   &none      &none          &kp RSHIFT  &kp RCTRL  &kp LEFT_ALT  &kp RGUI
+&kp F11  &kp F7  &kp F8     &kp F9   &none      &none          &none       &none
+                 &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
             >;
 
             label = "func";
@@ -269,13 +281,13 @@
 
         params {
             bindings = <
-            &none  &none       &none       &none                       &bt BT_SEL 0            &none          &none        &none
-            &none      &none   &none  &trans  &trans        &none  &none  &none &none   &none
-            &none   &none   &none   &none   &none   &none   &none   &none
-                         &none  &none &none &none &none
+&none  &none  &none  &none   &bt BT_SEL 0  &none  &none  &none
+&none  &none  &none  &trans  &trans        &none  &none  &none  &none  &none
+&none  &none  &none  &none   &none         &none  &none  &none
+              &none  &none   &none         &none  &none
             >;
 
             label = "params";
         };
-        };
+    };
 };
