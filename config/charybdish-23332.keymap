@@ -9,7 +9,10 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+#include <behaviors/mouse_keys.dtsi>
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 72
+
 #define MS LSHFT
 #define MA LALT
 #define MC LCTL
@@ -36,17 +39,6 @@
 #define MOUSE_SCROLL        8
 
 / {
-    
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 8 400>; // Switch to auto-mouse temp layer, decrease sensitivity
-        scroll {
-            layers = <7>; // SCROLL
-            input-processors = <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
-    };
-
     behaviors {
         HMR_R: HMR_R {
             compatible = "zmk,behavior-hold-tap";
