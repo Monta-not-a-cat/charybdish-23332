@@ -3,9 +3,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 72
-
 #define MS LSHFT
 #define MA LALT
 #define MC LCTL
@@ -222,6 +222,18 @@
             bindings = <&kp CAPSLOCK>;
             key-positions = <10 8 9>;
         };
+
+        kp_divide {
+            bindings = <&kp KP_DIVIDE>;
+            key-positions = <4 5>;
+            layers = <4>;
+        };
+
+        kp_mult {
+            bindings = <&kp KP_ASTERISK>;
+            key-positions = <13 14>;
+            layers = <4>;
+        };
     };
 
     keymap {
@@ -235,31 +247,31 @@
                                       &none           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-&odk W  &odk E  &odk R  &kp Z                 &odk N     &kp Y       &odk I    &odk O
-&odk A  &odk S  &odk D  &odk F                &kp B      &odk H      &odk J    &odk K  &odk L  &odk SEMI
-&odk Q  &odk X  &odk C  &odk V                &kp SLASH  &odk COMMA  &odk DOT  &odk P
-                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE  &none
+&odk W  &odk E  &odk R  &kp Z                 &odk N     &kp Y       &odk I                   &odk O
+&odk A  &odk S  &odk D  &odk F                &kp B      &odk H      &odk J                   &odk K  &odk L  &odk SEMI
+&odk Q  &odk X  &odk C  &odk V                &kp SLASH  &odk COMMA  &odk DOT                 &odk P
+                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         super_odk_shift {
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
-&sodk W  &sodk E  &sodk R  &kp Z                 &sodk N     &kp Y       &sodk I    &sodk O
-&sodk A  &sodk S  &sodk D  &sodk F                &kp B      &sodk H      &sodk J    &sodk K  &sodk L  &sodk SEMI
-&sodk Q  &sodk X  &sodk C  &sodk V                &kp SLASH  &sodk COMMA  &sodk DOT  &sodk P
-                &none   &osl LAYER_ODK_SHIFT  &kp TAB    &sodk SPACE  &none
+&sodk W  &sodk E  &sodk R  &kp Z                 &sodk N    &kp Y        &sodk I                  &sodk O
+&sodk A  &sodk S  &sodk D  &sodk F               &kp B      &sodk H      &sodk J                  &sodk K  &sodk L  &sodk SEMI
+&sodk Q  &sodk X  &sodk C  &sodk V               &kp SLASH  &sodk COMMA  &sodk DOT                &sodk P
+                  &none    &osl LAYER_ODK_SHIFT  &kp TAB    &sodk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         extra_symbols {
@@ -268,44 +280,43 @@
 &none  &none         &none      &none  &none  &none      &none  &none
 &none  &none         &kp RA(Z)  &none  &none  &kp RA(B)  &none  &none  &kp RA(N)  &none
 &none  &kp RA(FSLH)  &none      &none  &none  &none      &none  &none
-            &none         &none      &none  &none  &none
+                     &none      &none  &none  &none      &none
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         num_nav {
             bindings = <
-&kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_NUMBER_7  &kp KP_NUMBER_8       &kp KP_NUMBER_9           &kp KP_PLUS
-&kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_DIVIDE         &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7       &kp KP_N8                 &kp KP_NUMBER_9
+&kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS           &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
 &kp LC(X)    &kp LC(W)       &kp LC(V)       &kp LC(A)   &kp KP_NUMBER_1  &kp KP_NUMBER_2       &kp KP_NUMBER_3           &kp KP_DOT
                              &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &kp BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
-
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         num {
             bindings = <
-&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none      &none          &none            &none
-&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5     &kp N6         &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
-&none                     &none                     &none                  &none                   &none      &none          &none            &none
-                        &none                         &kp LSHFT              &lt LAYER_FUNC TAB      &kp SPACE  &kp BACKSPACE
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &none                   &none               &none      &none            &none
+&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5              &kp N6     &HMR_R RSHFT N7  &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
+&none                     &none                     &none                  &none                   &none               &none      &none            &none
+                                                    &none                  &kp LSHFT               &lt LAYER_FUNC TAB  &kp SPACE  &kp BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         func {
             bindings = <
-&kp F1   &kp F2  &kp F3     &kp F12  &none      &none          &none       &none
-&kp F10  &kp F4  &kp F5     &kp F6   &none      &none          &kp RSHIFT  &kp RCTRL  &kp LEFT_ALT  &kp RGUI
-&kp F11  &kp F7  &kp F8     &kp F9   &none      &none          &none       &none
-         &none        &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
+&kp F1   &kp F2  &kp F3  &kp F12    &none    &none      &none          &none
+&kp F10  &kp F4  &kp F5  &kp F6     &none    &none      &kp RSHIFT     &kp RCTRL  &kp LEFT_ALT  &kp RGUI
+&kp F11  &kp F7  &kp F8  &kp F9     &none    &none      &none          &none
+                 &none   &kp LSHFT  &kp TAB  &kp SPACE  &kp BACKSPACE
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         params {
@@ -316,7 +327,7 @@
               &none  &none   &none         &none  &none
             >;
 
-            sensor-bindings =   <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
