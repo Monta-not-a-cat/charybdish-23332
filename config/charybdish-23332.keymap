@@ -44,6 +44,24 @@
             flavor = "balanced";
             require-prior-idle-ms = <230>;
         };
+
+        kp_q: kp_q {
+            compatible = "zmk,behavior-mod-morph";
+            label = "key_press_q";
+            bindings = <&kp Q>, <&kp RA(Y)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
+
+        dot: dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "key_press_dot";
+            bindings = <&kp N>, <&kp RA(Q)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
     };
 
     combos {
