@@ -27,12 +27,11 @@
 #define LAYER_BASE          0
 #define LAYER_ODK           1
 #define LAYER_ODK_SHIFT     2
-#define LAYER_EXTRA_SYMBOLS 3
-#define LAYER_NUMNAV        4
-#define LAYER_NUM_ROW       5
-#define LAYER_FUNC          6
-#define AUTO_MOUSE          7
-#define MOUSE_SCROLL        8
+#define LAYER_NUMNAV        3
+#define LAYER_NUM_ROW       4
+#define LAYER_FUNC          5
+#define AUTO_MOUSE          6
+#define MOUSE_SCROLL        7
 
 / {
     behaviors {
