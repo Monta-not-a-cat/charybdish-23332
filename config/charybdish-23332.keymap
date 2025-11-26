@@ -130,6 +130,16 @@
 
             mods = <(MOD_LSFT)>;
         };
+
+        q_ctrl_z: q_ctrl_z {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Q_CTRL_Z";
+            bindings = <&kp Q>, <&kp Z>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RCTL|MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
 
     macros {
@@ -205,8 +215,8 @@
             bindings = <
 &kp W              &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
 &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
-&kp Q              &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
-                                      &kp A           &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
+&q_ctrl_z          &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
+                                      &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -221,7 +231,7 @@
                 &none   &osl 2  &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&mouse_scrll_v>;
         };
 
         super_odk_shift {
@@ -233,18 +243,18 @@
                   &none    &osl 2   &kp TAB    &sodk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&mouse_scrll_v>;
         };
 
         num_nav {
             bindings = <
 &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
 &kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-&kp LC(X)    &kp LC(W)       &kp LC(V)       &kp LC(A)   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
-                             &kp B           &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
+&none        &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
+                             &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp C D>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         num {
@@ -252,10 +262,10 @@
 &kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N9)              &kp LS(N0)  &kp RA(Z)  &none                    &none
 &HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5      &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
 &none                     &none                     &none                  &none                   &none       &none      &none                    &none
-                                                    &none                  &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
+                                                    &kp K_PLAY_PAUSE       &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&mouse_scroll_h>;
         };
 
         func {
@@ -266,7 +276,7 @@
                  &none   &kp LSHFT  &kp TAB  &kp SPACE  &mt RALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         params {
