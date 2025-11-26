@@ -21,3 +21,7 @@
         input-processors = <&zip_xy_scaler 2 6>;
     };
 };
+
+&msc_input_listener {
+    input-processors = <&zip_temp_layer MSE_L 1500>;
+};
