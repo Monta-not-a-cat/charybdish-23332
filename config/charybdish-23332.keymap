@@ -1,18 +1,14 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#include <dt-bindings/zmk/outputs.h>
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-
-#include <behaviors/mouse_keys.dtsi>
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 72
-
 #define MS LSHFT
 #define MA LALT
 #define MC LCTL
@@ -210,10 +206,10 @@
 &kp W              &kp E              &kp R           &kp T           &kp N                  &kp U                   &kp I                    &dead_key
 &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G                  &kp H                   &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
 &kp Q              &kp X              &kp C           &kp V           &kp M                  &kp COMMA               &kp DOT                  &kp P
-                                      &kp K_MUTE      &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
+                                      &kp A           &kp LEFT_SHIFT  &lt LAYER_NUM_ROW TAB  &lt LAYER_NUMNAV SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&mouse_scrll_v>;
         };
 
         super_odk {
@@ -257,10 +253,10 @@
 &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7       &kp KP_N8                 &kp KP_NUMBER_9
 &kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS           &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
 &kp LC(X)    &kp LC(W)       &kp LC(V)       &kp LC(A)   &kp KP_NUMBER_1  &kp KP_NUMBER_2       &kp KP_NUMBER_3           &kp KP_DOT
-                             &none           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &mt RIGHT_ALT BACKSPACE
+                             &kp B           &kp LSHFT   &kp TAB          &lt LAYER_FUNC SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C D>;
         };
 
         num {
@@ -287,10 +283,10 @@
 
         params {
             bindings = <
-        &none  &none  &none  &bt BT_SEL 0         &none  &none  &none  &none
-&none   &none  &none  &none  &none         &none  &none  &none  &none  &none
-&none   &none  &none  &none                       &none  &none  &none  &none
-               &none  &none  &none         &none  &none
+&none  &none  &none  &bt BT_SEL 0  &none  &none  &none  &none
+&none  &none  &none  &none         &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none         &none  &none  &none  &none
+              &none  &none         &none  &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
@@ -298,19 +294,19 @@
 
         AUTO-MOUSE {
             bindings = <
-        &none  &none  &none  &none         &none  &none  &none  &none
-&none   &none  &none  &none  &none         &none  &none  &none  &none  &none
-&none   &none  &none  &none                       &none  &none  &none  &none
-               &none  &mkp LCLK  &mkp RCLK         &none  &none
+&none  &none  &none  &none      &none      &none  &none  &none
+&none  &none  &none  &none      &none      &none  &none  &none  &none  &none
+&none  &none  &none  &none      &none      &none  &none  &none
+              &none  &mkp LCLK  &mkp RCLK  &none  &none
             >;
         };
 
         SCROLL {
             bindings = <
-        &none  &none  &none  &none         &none  &none  &none  &none
-&none   &none  &none  &none  &none         &none  &none  &none  &none  &none
-&none   &none  &none  &none                       &none  &none  &none  &none
-               &none  &none  &none         &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none
+              &none  &none  &none  &none  &none
             >;
         };
     };
