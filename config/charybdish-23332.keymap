@@ -13,6 +13,9 @@
 #define MA LALT
 #define MC LCTL
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+
 /* --- KEYMAP CONFIG --- */
 // ╭──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────╮
 //           00     01     02     03        04     05     06     07         
@@ -35,6 +38,12 @@
 #define MOUSE_SCROLL        9
 
 / {
+    zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <2000>;
+    };
+
     behaviors {
         HMR_R: HMR_R {
             compatible = "zmk,behavior-hold-tap";
@@ -322,6 +331,3 @@
     };
 };
 
-&msc_input_listener {
-    input-processors = <&zip_temp_layer AUTO_MOUSE 1500>;
-};
