@@ -33,7 +33,7 @@
 #define LAYER_NUM_ROW       4
 #define LAYER_FUNC          5
 #define LAYER_PARAM         6
-#define MOUSE               7
+#define MOUSE_NORMAL        7
 #define MOUSE_SNIPE         8
 #define MOUSE_SCROLL        9
 
@@ -232,103 +232,113 @@
 
         default_layer {
             bindings = <
-                &kp W                &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
-                &HRM_L LEFT_GUI A    &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
-                &mouse_q_ctrl_z 8 0  &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
-                                                        &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
+&kp W                &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
+&HRM_L LEFT_GUI A    &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
+&mouse_q_ctrl_z 8 0  &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
+                                        &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-                &odk W  &odk E  &odk R  &kp Z   &odk N     &kp Y       &odk I                   &odk O
-                &odk A  &odk S  &odk D  &odk F  &kp B      &odk H      &odk J                   &odk K  &odk L  &odk SEMI
-                &odk Q  &odk X  &odk C  &odk V  &kp SLASH  &odk COMMA  &odk DOT                 &odk P
-                                &none   &osl 2  &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
+&odk W  &odk E  &odk R  &kp Z   &odk N     &kp Y       &odk I                   &odk O
+&odk A  &odk S  &odk D  &odk F  &kp B      &odk H      &odk J                   &odk K  &odk L  &odk SEMI
+&odk Q  &odk X  &odk C  &odk V  &kp SLASH  &odk COMMA  &odk DOT                 &odk P
+                &none   &osl 2  &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
         super_odk_shift {
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
-                &sodk W  &sodk E  &sodk R  &kp LS(Z)  &sodk N        &kp LS(Y)    &sodk I                  &sodk O
-                &sodk A  &sodk S  &sodk D  &sodk F    &kp LS(B)      &sodk H      &sodk J                  &sodk K  &sodk L  &sodk SEMI
-                &sodk Q  &sodk X  &sodk C  &sodk V    &kp LS(SLASH)  &sodk COMMA  &sodk DOT                &sodk P
-                                &none    &osl 2     &kp TAB        &sodk SPACE  &mt RIGHT_ALT BACKSPACE
+&sodk W  &sodk E  &sodk R  &kp LS(Z)  &sodk N        &kp LS(Y)    &sodk I                  &sodk O
+&sodk A  &sodk S  &sodk D  &sodk F    &kp LS(B)      &sodk H      &sodk J                  &sodk K  &sodk L  &sodk SEMI
+&sodk Q  &sodk X  &sodk C  &sodk V    &kp LS(SLASH)  &sodk COMMA  &sodk DOT                &sodk P
+                  &none    &osl 2     &kp TAB        &sodk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
         num_nav {
             bindings = <
-                &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
-                &kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-                &none        &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
-                                            &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
+&kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
+&kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&none        &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
+                             &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
             >;
+
             sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         num {
             bindings = <
-                &kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N9)              &kp LS(N0)  &kp RA(Z)  &none                    &none
-                &HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5      &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
-                &none                     &none                     &none                  &none                   &none       &none      &none                    &none
-                                                                    &kp K_PLAY_PAUSE       &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
+&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N9)              &kp LS(N0)  &kp RA(Z)  &none                    &none
+&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5      &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
+&none                     &none                     &none                  &none                   &none       &none      &none                    &none
+                                                    &kp K_PLAY_PAUSE       &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
             >;
+
             sensor-bindings = <&mouse_scroll_h>;
         };
 
         func {
             bindings = <
-                &kp F1   &kp F2  &kp F3  &kp F12    &none    &none      &none               &none
-                &kp F10  &kp F4  &kp F5  &kp F6     &none    &none      &kp RSHIFT          &kp RCTRL  &kp LEFT_ALT  &kp RGUI
-                &kp F11  &kp F7  &kp F8  &kp F9     &none    &none      &none               &none
-                                &none   &kp LSHFT  &kp TAB  &kp SPACE  &mt RALT BACKSPACE
+&kp F1   &kp F2  &kp F3  &kp F12    &none    &none      &none               &none
+&kp F10  &kp F4  &kp F5  &kp F6     &none    &none      &kp RSHIFT          &kp RCTRL  &kp LEFT_ALT  &kp RGUI
+&kp F11  &kp F7  &kp F8  &kp F9     &none    &none      &none               &none
+                 &none   &kp LSHFT  &kp TAB  &kp SPACE  &mt RALT BACKSPACE
             >;
+
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         params {
             bindings = <
-                &none  &none  &none  &bt BT_SEL 0  &none  &none  &none  &none
-                &none  &none  &none  &none         &none  &none  &none  &none  &none  &none
-                &none  &none  &none  &none         &none  &none  &none  &none
-                            &none  &none         &none  &none  &none
+&none  &none  &none  &bt BT_SEL 0  &none  &none  &none  &none
+&none  &none  &none  &none         &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none         &none  &none  &none  &none
+              &none  &none         &none  &none  &none
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
-        MOUSE {
+        MOUSE-NORMAL {
             bindings = <
-                            &kp LC(W)   &none       &none       &mo 9           &none      &none    &none   &none
-                &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &mkp MB3        &none      &none    &none   &none   &none
-                &none       &mo 8       &none       &kp LC(V)                   &none      &none    &none           &none
-                                        &none       &mkp LCLK   &mkp RCLK       &kp SPACE  &kp BACKSPACE
+&none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&mo 8  &none  &none  &none  &none  &none  &none  &none
+              &none  &none  &none  &none  &none
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
         MOUSE-SNIPE {
             bindings = <
-                            &kp LC(W)   &none       &none       &mo 9           &none      &none    &none   &none
-                &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &mkp MB3        &none      &none    &none   &none   &none
-                &none       &none       &none       &kp LC(V)                   &none      &none    &none           &none
-                                        &none       &mkp LCLK   &mkp RCLK       &kp SPACE  &kp BACKSPACE
+&kp LC(W)  &none     &none      &mo 9      &none      &none      &none          &none
+&kp LGUI   &kp LALT  &kp LCTRL  &kp LSHFT  &mkp MB3   &none      &none          &none  &none  &none
+&none      &none     &none      &kp LC(V)  &none      &none      &none          &none
+                     &none      &mkp LCLK  &mkp RCLK  &kp SPACE  &kp BACKSPACE
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
 
         SCROLL {
             bindings = <
-                &none  &none  &none  &none     &none     &none  &none  &none
-                &none  &kp LALT  &kp LCTRL  &kp LSHFT     &mkp MB3  &none  &none  &none  &none  &none
-                &none  &none  &none  &none     &none     &none  &none  &none
-                            &none  &mkp MB1  &mkp MB2  &none  &none
+&none  &none  &none  &none     &none     &none  &none  &none
+&none  &none  &none  &none     &mkp MB3  &none  &none  &none  &none  &none
+&none  &none  &none  &none     &none     &none  &none  &none
+              &none  &mkp MB1  &mkp MB2  &none  &none
             >;
+
             sensor-bindings = <&mouse_scrll_v>;
         };
     };
