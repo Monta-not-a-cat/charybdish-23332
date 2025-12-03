@@ -6,9 +6,9 @@
     /*input-processors = <&zip_xy_scaler 5 5>, <&zip_temp_layer 7 300>;*/
     input-processors = <&zip_xy_scaler 5 5>;    
 
-    layer0: layer0 {
+    layer_base: layer_base {
         layers           = <0>;
-        input-processors = <&zip_xy_scaler 0 0>;
+        input-processors = <&zip_xy_scaler 0 5>;
     };
 
     /* slow-pointer override */
