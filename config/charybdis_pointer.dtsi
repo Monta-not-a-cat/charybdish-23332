@@ -29,6 +29,7 @@
     layer4: layer4 {
         layers           = <4>;
         input-processors = <&zip_xy_scaler 0 0>;
+    };
 
     layer5: layer5 {
         layers           = <5>;
