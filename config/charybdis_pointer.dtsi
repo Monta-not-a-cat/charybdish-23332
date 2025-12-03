@@ -4,19 +4,12 @@
 &trackball_listener {
     /* base processor chain on all layers */
     /*input-processors = <&zip_xy_scaler 5 5>, <&zip_temp_layer 7 300>;*/
-    input-processors = <&zip_xy_scaler 5 5>;
-
-    layer_base: layer_base {
-        layers           = <0>;
-        input-processors = <&zip_xy_scaler 0 5>;
-        process-next;
-    };
+    // input-processors = <&zip_xy_scaler 5 5>;
 
     /* slow-pointer override */
     slow_pointer: slow_pointer {
         layers           = <8>;
         input-processors = <&zip_xy_scaler 2 5>;
-        process-next;
     };
 
     /* scroll override */
@@ -27,6 +20,11 @@
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
             &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
         >;
+    };
+
+    layer_base: layer_base {
+        layers           = <0>;
+        input-processors = <&zip_xy_scaler 0 5>;
         process-next;
     };
 };
