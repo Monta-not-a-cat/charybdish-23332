@@ -149,6 +149,16 @@
             mods = <(MOD_RCTL|MOD_LCTL)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL)>;
         };
+
+        mouse_q_ctrl_z: mouse_q_ctrl_z {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_Q_CTRL_Z";
+            bindings = <&mo>, <&q_ctrl_z>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+        };
     };
 
     macros {
@@ -222,10 +232,10 @@
 
         default_layer {
             bindings = <
-&kp W              &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
-&HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
-&q_ctrl_z          &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
-                                      &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
+&kp W                &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
+&HRM_L LEFT_GUI A    &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
+&mouse_q_ctrl_z 8 0  &kp X              &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
+                                        &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -312,10 +322,10 @@
 
         MOUSE-SNIPE {
             bindings = <
-&none  &none  &none  &none      &none      &none  &none  &none
-&none  &none  &none  &none      &none      &none  &none  &none  &none  &none
-&none  &none  &none  &none      &none      &none  &none  &none
-              &none  &mkp LCLK  &mkp RCLK  &none  &none
+&kp LC(W)  &none     &none      &mo 9      &none      &none      &none          &none
+&kp LGUI   &kp LALT  &kp LCTRL  &kp LSHFT  &mkp MB3   &none      &none          &none  &none  &none
+&none      &none     &none      &kp LC(V)  &none      &none      &none          &none
+                     &none      &mkp LCLK  &mkp RCLK  &kp SPACE  &kp BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -323,10 +333,10 @@
 
         SCROLL {
             bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none
-              &none  &none  &none  &none  &none
+&none  &none  &none  &none     &none     &none  &none  &none
+&none  &none  &none  &none     &mkp MB3  &none  &none  &none  &none  &none
+&none  &none  &none  &none     &none     &none  &none  &none
+              &none  &mkp MB1  &mkp MB2  &none  &none
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
