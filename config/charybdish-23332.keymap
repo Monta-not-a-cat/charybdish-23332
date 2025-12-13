@@ -211,7 +211,7 @@
 
         capslock {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <10 8 9>;
+            key-positions = <12 13>;
         };
 
         kp_divide {
@@ -279,13 +279,13 @@
 
         num_nav {
             bindings = <
-&none               &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
-&kp LEFT_SHIFT      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-&kp LC(LEFT_SHIFT)  &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
-                                    &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
+&kp LC(W)  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
+&none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&none      &kp LC(X)       &none           &kp LC(V)   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
+                           &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+            sensor-bindings = <&mouse_scroll_h>;
         };
 
         num {
@@ -296,7 +296,7 @@
                                                     &kp K_PLAY_PAUSE       &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
-            sensor-bindings = <&mouse_scroll_h>;
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         func {
