@@ -229,11 +229,13 @@
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <27 28>;
+            layers = <0>;
         };
 
         ctrl_backspace {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <30 29>;
+            layers = <0>;
         };
     };
 
@@ -277,10 +279,10 @@
 
         num_nav {
             bindings = <
-&kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN   &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
-&kp HOME     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp END          &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-&none        &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
-                             &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
+&none               &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
+&kp LEFT_SHIFT      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
+&kp LC(LEFT_SHIFT)  &none           &none           &none       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
+                                    &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
