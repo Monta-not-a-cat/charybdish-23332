@@ -237,6 +237,12 @@
             key-positions = <30 29>;
             layers = <0>;
         };
+
+        scroll_layer {
+            bindings = <&mo 9>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -323,7 +329,7 @@
 
         MOUSE-NORMAL {
             bindings = <
-&kp LC(W)  &none     &none      &mo 9      &none     &none      &none          &none
+&kp LC(W)  &none     &none      &none      &none     &none      &none          &none
 &kp LGUI   &kp LALT  &kp LCTRL  &kp LSHFT  &mkp MB3  &none      &none          &none  &none  &none
 &none      &mo 8     &none      &kp LC(V)  &none     &none      &none          &none
                      &none      &mkp MB1   &mkp MB2  &kp SPACE  &kp BACKSPACE
@@ -334,7 +340,7 @@
 
         MOUSE-SNIPE {
             bindings = <
-&kp LC(W)  &none     &none      &mo 9      &none      &none      &none          &none
+&kp LC(W)  &none     &none      &none      &none      &none      &none          &none
 &kp LGUI   &kp LALT  &kp LCTRL  &kp LSHFT  &mkp MB3   &none      &none          &none  &none  &none
 &mo 7      &none     &none      &kp LC(V)  &none      &none      &none          &none
                      &none      &mkp LCLK  &mkp RCLK  &kp SPACE  &kp BACKSPACE
