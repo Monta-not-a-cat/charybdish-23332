@@ -4,12 +4,12 @@
 &trackball_listener {
     /* base processor chain on all layers */
     /*input-processors = <&zip_xy_scaler 5 5>, <&zip_temp_layer 7 300>;*/
-    // input-processors = <&zip_xy_scaler 5 5>;
+    /* input-processors = <&zip_xy_scaler 5 5>; */
 
     /* pointer normal speed */
     normal_pointer: normal_pointer {
         layers           = <7>;
-        input-processors = <&zip_xy_scaler 5 4>;
+        input-processors = <&zip_xy_scaler 5 6>;
     };
 
     

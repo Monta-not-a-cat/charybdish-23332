@@ -9,7 +9,7 @@
     /* pointer normal speed */
     normal_pointer: normal_pointer {
         layers           = <7>;
-        input-processors = <&zip_xy_scaler 5 4>;
+        input-processors = <&zip_xy_scaler 5 6>;
     };
 
     
