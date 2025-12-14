@@ -211,7 +211,7 @@
 
         capslock {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <12 13>;
+            key-positions = <12 13 3 4>;
         };
 
         kp_divide {
