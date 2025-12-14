@@ -51,12 +51,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 8 9 10 11 12 18 19 20 21 26 27 28 29 30>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <230>;
+            require-prior-idle-ms = <210>;
         };
 
         HRM_L: HRM_L {
@@ -65,12 +65,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <4 5 6 7 13 14 15 16 17 22 23 24 25 29 30 28 27 26>;
             flavor = "balanced";
-            require-prior-idle-ms = <230>;
+            require-prior-idle-ms = <210>;
         };
 
         mouse_scrll_v: mouse_scrll_v {
@@ -156,8 +156,11 @@
             bindings = <&mo>, <&q_ctrl_z>;
 
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <210>;
+            hold-trigger-on-release;
         };
     };
 
@@ -202,46 +205,54 @@
         printscreen {
             bindings = <&kp PRINTSCREEN>;
             key-positions = <21 19 20>;
+            require-prior-idle-ms = <210>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
+            require-prior-idle-ms = <210>;
         };
 
         capslock {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <12 13 3 4>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <210>;
         };
 
         kp_divide {
             bindings = <&kp KP_DIVIDE>;
-            key-positions = <4 5>;
+            key-positions = <5 6>;
             layers = <3>;
+            require-prior-idle-ms = <210>;
         };
 
         kp_mult {
             bindings = <&kp KP_ASTERISK>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
             layers = <3>;
+            require-prior-idle-ms = <210>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <27 28>;
             layers = <0>;
+            require-prior-idle-ms = <210>;
         };
 
         ctrl_backspace {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <30 29>;
             layers = <0>;
+            require-prior-idle-ms = <210>;
         };
 
         scroll_layer {
             bindings = <&mo 9>;
             key-positions = <18 19>;
             layers = <0>;
+            require-prior-idle-ms = <210>;
         };
     };
 
