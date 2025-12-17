@@ -262,7 +262,7 @@
         };
 
         k_y {
-            bindings = <&kp Y>;
+            bindings = <&kp P>;
             key-positions = <16 17>;
             require-prior-idle-ms = <210>;
         };
