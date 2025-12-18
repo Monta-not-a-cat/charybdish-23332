@@ -210,7 +210,7 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <9 10 11>;
+            key-positions = <0 2>;
         };
 
         capslock {
