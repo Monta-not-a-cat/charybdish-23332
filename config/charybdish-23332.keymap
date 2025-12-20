@@ -258,42 +258,36 @@
             bindings = <&kp Q>;
             key-positions = <9 19>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
         };
 
         odk_q {
             bindings = <&odk Q>;
             key-positions = <9 19>;
             layers = <1>;
-            require-prior-idle-ms = <150>;
         };
 
         sodk_q {
             bindings = <&odk Q>;
             key-positions = <9 19>;
             layers = <2>;
-            require-prior-idle-ms = <150>;
         };
 
         kp_y {
             bindings = <&kp P>;
             key-positions = <16 24>;
             layers = <0>;
-            require-prior-idle-ms = <150>;
         };
 
         odk_y {
             bindings = <&odk P>;
             key-positions = <16 24>;
             layers = <1>;
-            require-prior-idle-ms = <150>;
         };
 
         sodk_y {
             bindings = <&odk P>;
             key-positions = <16 24>;
             layers = <2>;
-            require-prior-idle-ms = <150>;
         };
     };
 
