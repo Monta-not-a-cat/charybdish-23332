@@ -210,8 +210,8 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-            require-prior-idle-ms = <250>;
+            key-positions = <0 1 2>;
+            timeout-ms = <75>;
         };
 
         capslock {
