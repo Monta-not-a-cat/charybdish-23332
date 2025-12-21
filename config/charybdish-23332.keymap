@@ -204,13 +204,14 @@
 
         printscreen {
             bindings = <&kp PRINTSCREEN>;
-            key-positions = <21 19>;
+            key-positions = <21 19 20>;
             require-prior-idle-ms = <250>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1 2>;
+            key-positions = <0 1>;
+            require-prior-idle-ms = <250>;
         };
 
         capslock {
