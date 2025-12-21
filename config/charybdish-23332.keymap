@@ -210,7 +210,7 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 2>;
+            key-positions = <0 1 2>;
         };
 
         capslock {
@@ -256,37 +256,37 @@
 
         kp_q {
             bindings = <&kp Q>;
-            key-positions = <9 19>;
+            key-positions = <9 0>;
             layers = <0>;
         };
 
         odk_q {
             bindings = <&odk Q>;
-            key-positions = <9 19>;
+            key-positions = <9 0>;
             layers = <1>;
         };
 
         sodk_q {
             bindings = <&odk Q>;
-            key-positions = <9 19>;
+            key-positions = <9 0>;
             layers = <2>;
         };
 
         kp_y {
             bindings = <&kp P>;
-            key-positions = <16 24>;
+            key-positions = <16 7>;
             layers = <0>;
         };
 
         odk_y {
             bindings = <&odk P>;
-            key-positions = <16 24>;
+            key-positions = <16 7>;
             layers = <1>;
         };
 
         sodk_y {
             bindings = <&odk P>;
-            key-positions = <16 24>;
+            key-positions = <16 7>;
             layers = <2>;
         };
     };
