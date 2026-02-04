@@ -249,7 +249,7 @@
         };
 
         scroll_layer {
-            bindings = <&mo 9>;
+            bindings = <&mo 8>;
             key-positions = <19 20>;
             layers = <0>;
             require-prior-idle-ms = <250>;
@@ -335,8 +335,8 @@
             bindings = <
 &kp W              &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
 &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
-&lt 7 Q            &lt 7 X            &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
-                                      &kp K_MUTE      &sk LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
+&lt 6 Q            &lt 6 X            &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
+                                      &kp K_MUTE      &sk LEFT_SHIFT  &lt 3 TAB  &lt 0 SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -357,10 +357,10 @@
         super_odk_shift {
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
-&sodk W  &sodk E  &sodk R  &kp LS(Z)  &sodk N        &kp LS(Y)    &sodk I                  &sodk O
-&sodk A  &sodk S  &sodk D  &sodk F    &kp LS(B)      &sodk H      &sodk J                  &sodk K  &sodk L  &sodk SEMI
-&sodk Q  &sodk X  &sodk C  &sodk V    &kp LS(SLASH)  &sodk COMMA  &sodk DOT                &sodk P
-                  &none    &osl 2     &kp TAB        &sodk SPACE  &mt RIGHT_ALT BACKSPACE
+&sodk W  &sodk E        &sodk R        &kp LS(Z)      &sodk N        &kp LS(Y)    &sodk I                  &sodk O
+&sodk A  &sodk S        &sodk D        &sodk F        &kp LS(B)      &sodk RA(G)  &kp RA(LS(N0))           &sodk K  &sodk L  &sodk SEMI
+&sodk Q  &kp RA(LS(Y))  &kp LS(RA(Z))  &kp LS(RA(B))  &kp LS(SLASH)  &sodk COMMA  &sodk DOT                &sodk P
+                        &none          &osl 2         &kp TAB        &sodk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -371,21 +371,10 @@
 &none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp N7        &kp N8                   &kp N9
 &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS   &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
 &none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3             &kp KP_DOT
-                       &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE   &mt RIGHT_ALT BACKSPACE
+                       &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 4 SPACE   &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll_h>;
-        };
-
-        num {
-            bindings = <
-&kp LS(N1)                &kp LS(N2)                &kp LS(N3)             &kp LS(N9)              &kp LS(N0)  &kp RA(Z)  &none                    &none
-&HRM_L LEFT_GUI NUMBER_1  &HRM_L LEFT_ALT NUMBER_2  &HRM_L LCTRL NUMBER_3  &HRM_L LSHIFT NUMBER_4  &kp N5      &kp N6     &HMR_R RSHFT N7          &HMR_R RCTRL N8  &HMR_R LEFT_ALT N9  &HMR_R RMETA N0
-&none                     &none                     &none                  &none                   &none       &none      &none                    &none
-                                                    &kp K_PLAY_PAUSE       &kp LSHFT               &lt 5 TAB   &kp SPACE  &mt RIGHT_ALT BACKSPACE
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         func {
@@ -412,7 +401,7 @@
 
         MOUSE-NORMAL {
             bindings = <
-&none     &none      &none      &mo 8      &none     &none      &none          &none
+&none     &none      &none      &mo 7      &none     &none      &none          &none
 &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &mkp MB3  &none      &none          &none  &none  &none
 &none     &kp LC(X)  &kp LC(W)  &kp LC(V)  &none     &none      &none          &none
                      &none      &mkp MB1   &mkp MB2  &kp SPACE  &kp BACKSPACE
