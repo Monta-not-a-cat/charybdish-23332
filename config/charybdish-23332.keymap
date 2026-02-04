@@ -211,7 +211,8 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
-            timeout-ms = <75>;
+            timeout-ms = <0>;
+            require-prior-idle-ms = <250>;
         };
 
         capslock {
