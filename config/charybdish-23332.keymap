@@ -210,7 +210,7 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1 2>;
+            key-positions = <0 1>;
             timeout-ms = <75>;
         };
 
@@ -313,6 +313,18 @@
             bindings = <&kp END>;
             key-positions = <11 21>;
             layers = <3>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <250>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <9 10>;
+            require-prior-idle-ms = <250>;
         };
     };
 
