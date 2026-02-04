@@ -324,7 +324,7 @@
 &kp W              &kp E              &kp R           &kp T           &kp N      &kp U        &kp I                    &dead_key
 &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LSHFT F  &kp G      &kp H        &HMR_R RSHIFT J          &HMR_R RCTRL K  &HMR_R LEFT_ALT L  &HMR_R RGUI SEMI
 &lt 7 Q            &lt 7 X            &kp C           &kp V           &kp M      &kp COMMA    &kp DOT                  &kp P
-                                      &kp K_MUTE      &kp LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
+                                      &kp K_MUTE      &sk LEFT_SHIFT  &lt 3 TAB  &lt 4 SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -356,10 +356,10 @@
 
         num_nav {
             bindings = <
-&none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp KP_NUMBER_7  &kp KP_N8                 &kp KP_NUMBER_9
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS      &HMR_R RSHFT KP_NUMBER_4  &HMR_R RCTRL KP_NUMBER_5  &HMR_R LALT KP_NUMBER_6  &HMR_R RMETA KP_N0
-&none  &kp LC(Z)       &none           &kp LC(P)   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3           &kp KP_DOT
-                       &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE      &mt RIGHT_ALT BACKSPACE
+&none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp N7        &kp N8                   &kp N9
+&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS   &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
+&none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3             &kp KP_DOT
+                       &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 5 SPACE   &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll_h>;
