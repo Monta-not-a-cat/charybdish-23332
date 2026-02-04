@@ -208,13 +208,6 @@
             require-prior-idle-ms = <250>;
         };
 
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-            timeout-ms = <0>;
-            require-prior-idle-ms = <250>;
-        };
-
         capslock {
             bindings = <&kp CAPSLOCK>;
             key-positions = <3 4>;
@@ -325,6 +318,12 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <9 10>;
+            require-prior-idle-ms = <250>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 0>;
             require-prior-idle-ms = <250>;
         };
     };
