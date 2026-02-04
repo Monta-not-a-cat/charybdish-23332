@@ -345,10 +345,10 @@
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-&odk W  &odk E  &odk R  &kp Z   &odk N     &kp Y       &odk I                   &odk O
-&odk A  &odk S  &odk D  &odk F  &kp B      &odk H      &odk J                   &odk K  &odk L  &odk SEMI
-&odk Q  &odk X  &odk C  &odk V  &kp SLASH  &odk COMMA  &odk DOT                 &odk P
-                &none   &osl 2  &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
+&odk W  &odk E     &odk R     &kp Z      &odk N     &kp Y             &odk I                   &odk O
+&odk A  &odk S     &odk D     &odk F     &kp B      &kp LS(NUMBER_1)  &odk N0                  &odk K  &odk L  &odk SEMI
+&odk Q  &kp RA(Y)  &kp RA(Z)  &kp RA(B)  &kp SLASH  &odk COMMA        &odk DOT                 &odk P
+                   &none      &osl 2     &kp TAB    &odk SPACE        &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
