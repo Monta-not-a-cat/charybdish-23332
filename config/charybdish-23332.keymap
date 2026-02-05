@@ -339,14 +339,14 @@
             require-prior-idle-ms = <250>;
         };
 
-        numpad+ {
+        numpad_plus {
             bindings = <&kp KP_PLUS>;
             key-positions = <16 24>;
             require-prior-idle-ms = <250>;
             layers = <3>;
         };
 
-        numpad- {
+        numpad_minus {
             bindings = <&kp KP_MINUS>;
             key-positions = <16 7>;
             require-prior-idle-ms = <250>;
