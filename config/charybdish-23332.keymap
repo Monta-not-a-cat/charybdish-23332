@@ -226,14 +226,14 @@
 
         kp_divide {
             bindings = <&kp KP_DIVIDE>;
-            key-positions = <5 6>;
+            key-positions = <6 15>;
             layers = <3>;
             require-prior-idle-ms = <250>;
         };
 
         kp_mult {
             bindings = <&kp KP_ASTERISK>;
-            key-positions = <14 15>;
+            key-positions = <15 23>;
             layers = <3>;
             require-prior-idle-ms = <250>;
         };
@@ -337,6 +337,20 @@
             bindings = <&kp ESCAPE>;
             key-positions = <1 0>;
             require-prior-idle-ms = <250>;
+        };
+
+        numpad+ {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <16 24>;
+            require-prior-idle-ms = <250>;
+            layers = <3>;
+        };
+
+        numpad- {
+            bindings = <&kp KP_MINUS>;
+            key-positions = <16 7>;
+            require-prior-idle-ms = <250>;
+            layers = <3>;
         };
     };
 
