@@ -294,30 +294,6 @@
             layers = <2>;
         };
 
-        page_up {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <1 10>;
-            layers = <3>;
-        };
-
-        page_down {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <20 10>;
-            layers = <3>;
-        };
-
-        home {
-            bindings = <&kp HOME>;
-            key-positions = <9 19>;
-            layers = <3>;
-        };
-
-        end {
-            bindings = <&kp END>;
-            key-positions = <11 21>;
-            layers = <3>;
-        };
-
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <6 7>;
@@ -336,6 +312,7 @@
             bindings = <&kp ESCAPE>;
             key-positions = <1 0>;
             require-prior-idle-ms = <250>;
+            timeout-ms = <20>;
         };
 
         numpad_plus {
