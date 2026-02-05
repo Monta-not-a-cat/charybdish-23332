@@ -345,10 +345,10 @@
         super_odk {
             display-name = "SuperOneDeadKey";
             bindings = <
-&odk W  &odk E     &odk R     &kp Z      &odk N     &kp Y             &odk I                   &odk O
-&odk A  &odk S     &odk D     &odk F     &kp B      &kp LS(NUMBER_1)  &odk N0                  &odk K  &odk L  &odk SEMI
-&odk Q  &kp RA(Y)  &kp RA(Z)  &kp RA(B)  &kp SLASH  &odk COMMA        &odk DOT                 &odk P
-                   &none      &osl 2     &kp TAB    &odk SPACE        &mt RIGHT_ALT BACKSPACE
+&odk W  &odk E     &odk R     &kp Z      &odk N     &kp Y       &odk I                   &odk O
+&odk A  &odk S     &odk D     &odk F     &kp B      &odk Z      &odk N0                  &odk K  &odk L  &odk SEMI
+&odk Q  &kp RA(Y)  &kp RA(Z)  &kp RA(B)  &kp SLASH  &odk COMMA  &odk DOT                 &odk P
+                   &none      &osl 2     &kp TAB    &odk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scrll_v>;
@@ -358,7 +358,7 @@
             display-name = "SuperOneDeadKeyShifted";
             bindings = <
 &sodk W  &sodk E        &sodk R        &kp LS(Z)      &sodk N        &kp LS(Y)    &sodk I                  &sodk O
-&sodk A  &sodk S        &sodk D        &sodk F        &kp LS(B)      &sodk RA(G)  &kp RA(LS(N0))           &sodk K  &sodk L  &sodk SEMI
+&sodk A  &sodk S        &sodk D        &sodk F        &kp LS(B)      &sodk Z      &kp RA(LS(N0))           &sodk K  &sodk L  &sodk SEMI
 &sodk Q  &kp RA(LS(Y))  &kp LS(RA(Z))  &kp LS(RA(B))  &kp LS(SLASH)  &sodk COMMA  &sodk DOT                &sodk P
                         &none          &osl 2         &kp TAB        &sodk SPACE  &mt RIGHT_ALT BACKSPACE
             >;
@@ -368,10 +368,10 @@
 
         num_nav {
             bindings = <
-&none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT  &kp N7        &kp N8                   &kp N9
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none            &kp KP_PLUS   &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
-&none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3             &kp KP_DOT
-                       &kp K_MUTE      &kp LSHFT   &kp TAB          &lt 4 SPACE   &mt RIGHT_ALT BACKSPACE
+&none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT   &kp N7        &kp N8                   &kp N9
+&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp LS(NUMBER_1)  &kp KP_PLUS   &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
+&none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3             &kp KP_DOT
+                       &kp K_MUTE      &kp LSHFT   &kp TAB           &lt 4 SPACE   &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll_h>;
