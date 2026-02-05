@@ -368,10 +368,10 @@
 
         num_nav {
             bindings = <
-&none  &kp UP_ARROW    &none           &kp DELETE  &kp KP_SUBTRACT   &kp N7        &kp N8                   &kp N9
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp LS(NUMBER_1)  &kp KP_PLUS   &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
-&none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3             &kp KP_DOT
-                       &kp K_MUTE      &kp LSHFT   &kp TAB           &lt 4 SPACE   &mt RIGHT_ALT BACKSPACE
+&none  &kp UP_ARROW    &none           &kp DELETE  &odk N0       &kp N7            &kp N8                   &kp N9
+&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &none         &kp LS(NUMBER_1)  &HMR_R RSHFT NUMBER_4    &HMR_R RCTRL N5  &HMR_R LALT NUMBER_6  &HMR_R RMETA N0
+&none  &kp LC(Z)       &none           &kp LC(P)   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3             &kp KP_DOT
+                       &kp K_MUTE      &kp LSHFT   &kp TAB       &lt 4 SPACE       &mt RIGHT_ALT BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll_h>;
