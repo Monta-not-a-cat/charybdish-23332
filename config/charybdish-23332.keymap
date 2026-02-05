@@ -166,11 +166,10 @@
         altgr_v_hash: altgr_v_hash {
             compatible = "zmk,behavior-mod-morph";
             label = "ALTGR_V_HASH";
-            bindings = <&kp V>, <&kp B>;
+            bindings = <&kp V>, <&kp RA(B)>;
 
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RGUI)>;
         };
     };
 
