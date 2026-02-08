@@ -213,7 +213,7 @@
 
         printscreen {
             bindings = <&kp PRINTSCREEN>;
-            key-positions = <21 19 20>;
+            key-positions = <21 19 10>;
             require-prior-idle-ms = <250>;
         };
 
@@ -304,14 +304,14 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <9 10>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <0>;
             timeout-ms = <20>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <1 0>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <0>;
             timeout-ms = <20>;
         };
 
