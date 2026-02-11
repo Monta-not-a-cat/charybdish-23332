@@ -387,7 +387,7 @@
                  &none   &kp LSHFT  &kp TAB  &kp SPACE  &mt RALT BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         params {
