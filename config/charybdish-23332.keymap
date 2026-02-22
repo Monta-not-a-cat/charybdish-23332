@@ -171,6 +171,15 @@
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
         };
+
+        worst_space: worst_space {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORST_SPACE";
+            bindings = <&kp SPACE>, <&kp SPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
